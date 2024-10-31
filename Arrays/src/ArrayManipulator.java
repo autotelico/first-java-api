@@ -116,7 +116,17 @@ public class ArrayManipulator {
             }
             counter--;
         }
-        System.out.println(Arrays.toString(arrayToSort));
         return arrayToSort;
+    }
+
+    static int[] concat(int[] array1, int[] array2) {
+        int[] finalArray = new int[array1.length + array2.length];
+        for (int i = 0; i < array1.length; i++) {
+            finalArray[i] = array1[i];
+        }
+        for (int i = array1.length; i < finalArray.length; i++) {
+            finalArray[i] = array2[i % array2.length];
+        }
+        return finalArray;
     }
 }
