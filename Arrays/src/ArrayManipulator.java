@@ -129,4 +129,16 @@ public class ArrayManipulator {
         }
         return finalArray;
     }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int[] resultArr = concat(nums1, nums2);
+        Arrays.sort(resultArr);
+        int middleIndex = resultArr.length / 2;
+        System.out.println(Arrays.toString(resultArr));
+        if (resultArr.length % 2 == 0) {
+            return (double) (resultArr[middleIndex] + resultArr[middleIndex - 1]) / 2;
+        } else {
+            return (double) resultArr[middleIndex];
+        }
+    }
 }
